@@ -1,11 +1,11 @@
 import MoviesGrid from "./components/MoviesGrid";
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   return (
     <div className="grid grid-cols-12 gap-4 p-8">
       <div className="col-span-2 hidden lg:block">
-        <Navbar />
+        <Sidebar />
       </div>
       <div className="col-span-7">
         <MoviesGrid />
