@@ -36,7 +36,7 @@ const MoviesGrid = () => {
         spaceBetween={10}
         slidesPerView={4}
         loop={true}
-        className="swiper-container relative py-14"
+        className="swiper-container py-14"
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}

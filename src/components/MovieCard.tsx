@@ -8,22 +8,25 @@ interface Props {
 const MovieCard = ({ data }: Props) => {
   const backgroundImage = movieImage(data.poster_path);
   return (
-    <div
-      className="relative flex flex-col gap-4 h-64 rounded-2xl"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <>
       <div
-        className="absolute inset-0 bg-gradient-to-t 
+        onClick={() => console.log(data.title)}
+        className="grid grid-rows-2 gap-4 h-64 rounded-2xl" // relative
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* <div
+          className="absolute inset-0 bg-gradient-to-t 
           from-white to-transparent opacity-0 
           transition-opacity duration-300 rounded-2xl
           hover:opacity-100"
-      />
-      <p>{data.title}</p>
-    </div>
+        /> */}
+      </div>
+      <p className="font-bold text-md cursor-pointer my-2">{data.title}</p>
+    </>
   );
 };
 
