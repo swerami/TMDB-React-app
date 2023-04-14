@@ -7,12 +7,12 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 
 SwiperCore.use([Navigation, Pagination]);
 
-// Define a generic type T for the data
 interface Props<T> {
   results: T[];
+  title: string;
 }
 
-const SwiperComp = <T,>({ results }: Props<T>) => {
+const SwiperComp = <T,>({ results, title }: Props<T>) => {
   const swiperRef = useRef<SwiperCore | null>(null);
   return (
     <div className="w-[720px] relative">
@@ -20,24 +20,27 @@ const SwiperComp = <T,>({ results }: Props<T>) => {
         spaceBetween={10}
         slidesPerView={4}
         loop={true}
-        className="swiper-container py-14"
+        className="swiper-container pt-14"
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
       >
-        <div className="absolute top-0 right-0 flex flex-row gap-4">
-          <button
-            onClick={() => swiperRef.current?.slidePrev()}
-            className="p-3 rounded-full border border-gray-300"
-          >
-            <AiOutlineLeft className="w-4" />
-          </button>
-          <button
-            onClick={() => swiperRef.current?.slideNext()}
-            className="p-3 rounded-full border border-gray-300"
-          >
-            <AiOutlineRight className="w-4" />
-          </button>
+        <div className="w-full absolute top-0 right-0 flex flex-row justify-between items-center">
+          <p className="font-semibold text-lg">{title}</p>
+          <div className="flex flex-row gap-4">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="p-3 rounded-full border border-gray-300"
+            >
+              <AiOutlineLeft className="w-4" />
+            </button>
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="p-3 rounded-full border border-gray-300"
+            >
+              <AiOutlineRight className="w-4" />
+            </button>
+          </div>
         </div>
         {results.map((result, index) => (
           <SwiperSlide key={index}>

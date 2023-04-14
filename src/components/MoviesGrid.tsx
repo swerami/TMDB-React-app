@@ -1,8 +1,8 @@
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/swiper-bundle.min.css";
-import useMovies, { Movies } from "../hooks/useMovies";
+import useMovies from "../hooks/useMovies";
 import SwiperComp from "./SwiperComp";
-import usePopular, { Popular } from "../hooks/usePopular";
+import usePopular from "../hooks/usePopular";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -11,8 +11,8 @@ const MoviesGrid = () => {
   const { data: popularData } = usePopular();
   return (
     <>
-      <SwiperComp results={movieData} />
-      <SwiperComp results={popularData} />
+      <SwiperComp title="Top Rated" results={popularData} />
+      <SwiperComp title="Discover more" results={movieData} />
     </>
   );
 };
