@@ -32,7 +32,7 @@ const generalItems: { [key: string]: IconType } = {
 const Navbar = () => {
   const [active, setActive] = useState("");
   return (
-    <nav className="border-r h-screen">
+    <nav className="border-r h-fill">
       <div className="flex flex-row items-center gap-2">
         <img
           className="w-12 text-red-500"

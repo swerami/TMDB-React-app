@@ -10,7 +10,6 @@ const MovieCard = ({ data }: Props) => {
   return (
     <>
       <div
-        onClick={() => console.log(data.title)}
         className="grid grid-rows-2 gap-4 h-64 rounded-2xl" // relative
         style={{
           backgroundImage: `url(${backgroundImage})`,
