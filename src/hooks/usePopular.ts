@@ -12,6 +12,6 @@ export interface Popular {
    results: Person[]
   }
 
-const usePopular = () => useData<Movies>("/person/popular")
+const usePopular = () => useData<Movies>("/movie/top_rated")
 
 export default usePopular
