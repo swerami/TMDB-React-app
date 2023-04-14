@@ -1,4 +1,3 @@
-import { Movies } from "../hooks/useMovies";
 import movieImage from "../services/movie-image";
 
 interface Props {

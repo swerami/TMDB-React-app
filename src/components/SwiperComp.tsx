@@ -4,6 +4,7 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
+import SwiperTS from "./SwiperTS";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -16,14 +17,11 @@ const SwiperComp = <T,>({ results, title }: Props<T>) => {
   const swiperRef = useRef<SwiperCore | null>(null);
   return (
     <div className="w-[720px] relative">
-      <Swiper
-        spaceBetween={10}
+      <SwiperTS
+        spaceBetween={12}
         slidesPerView={4}
-        loop={true}
-        className="swiper-container pt-14"
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        loop={false}
+        classes={"pt-12"}
       >
         <div className="w-full absolute top-0 right-0 flex flex-row justify-between items-center">
           <p className="font-semibold text-lg">{title}</p>
@@ -47,7 +45,7 @@ const SwiperComp = <T,>({ results, title }: Props<T>) => {
             <MovieCard data={result} />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </SwiperTS>
     </div>
   );
 };
