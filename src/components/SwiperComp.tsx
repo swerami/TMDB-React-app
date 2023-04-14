@@ -1,10 +1,9 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import MovieCard from "./MovieCard";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
-import { Movies } from "../hooks/useMovies";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -13,7 +12,7 @@ interface Props<T> {
   results: T[];
 }
 
-const SwiperComp = <T extends Movies>({ results }: Props<T>) => {
+const SwiperComp = <T,>({ results }: Props<T>) => {
   const swiperRef = useRef<SwiperCore | null>(null);
   return (
     <div className="w-[720px] relative">
@@ -40,8 +39,8 @@ const SwiperComp = <T extends Movies>({ results }: Props<T>) => {
             <AiOutlineRight className="w-4" />
           </button>
         </div>
-        {results.map((result) => (
-          <SwiperSlide key={result.title}>
+        {results.map((result, index) => (
+          <SwiperSlide key={index}>
             <MovieCard data={result} />
           </SwiperSlide>
         ))}

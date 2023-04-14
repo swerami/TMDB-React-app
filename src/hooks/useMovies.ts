@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import apiClient from '../services/api-client';
+import { useData } from './useData';
 
 export interface Movies {
     title: string;
@@ -7,19 +6,6 @@ export interface Movies {
     poster_path: string;
   }
 
-export const useMovies = () => {
-    const [movies, setMovies] = useState<Movies[]>([]);
-    useEffect(() => {
-        apiClient
-          .get("/discover/movie")
-          .then((res) => {
-            setMovies(res.data.results);
-            
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      }, []);
-      
-      return { movies }
-}
+const useMovies = () => useData<Movies>("/discover/movie")
+
+export default useMovies
