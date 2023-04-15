@@ -1,5 +1,7 @@
 import MoviesGrid from "./components/MoviesGrid";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import { useState } from "react";
 
 const App = () => {
   return (
@@ -8,6 +10,7 @@ const App = () => {
         <Sidebar />
       </div>
       <div className="col-span-12 md:col-span-7">
+        <Navbar />
         <MoviesGrid />
       </div>
       <div className="col-span-3 hidden xl:block">

@@ -13,10 +13,8 @@ interface Props<T> {
 }
 
 const SwiperComp = <T,>({ results, title }: Props<T>) => {
-  // State to store the current window width
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Update window width state on window resize
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -24,13 +22,11 @@ const SwiperComp = <T,>({ results, title }: Props<T>) => {
 
     window.addEventListener("resize", handleResize);
 
-    // Clean up event listener on unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // Set slidesPerView based on window width
   let slidesPerView;
   switch (true) {
     case windowWidth >= 0 && windowWidth <= 420:

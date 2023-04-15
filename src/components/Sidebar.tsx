@@ -29,10 +29,10 @@ const generalItems: { [key: string]: IconType } = {
   logout: CiLogout,
 };
 
-const Navbar = () => {
+const Sidebar = () => {
   const [active, setActive] = useState("");
   return (
-    <nav className="border-r h-fill">
+    <nav className="border-r h-full">
       <div className="flex flex-row items-center gap-2">
         <img
           className="w-12 text-red-500"
@@ -63,4 +63,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Sidebar;
