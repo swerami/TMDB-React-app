@@ -11,11 +11,11 @@ const MoviesGrid = () => {
   const { data: movieData } = useMovies();
   const { data: popularData } = usePopular();
   return (
-    <>
+    <div className="flex flex-col gap-12">
       <MainMovie />
       <SwiperComp title="Top Rated" results={popularData} />
       <SwiperComp title="Discover more" results={movieData} />
-    </>
+    </div>
   );
 };
 

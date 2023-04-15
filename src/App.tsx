@@ -7,7 +7,7 @@ const App = () => {
       <div className="col-span-2 hidden lg:block">
         <Sidebar />
       </div>
-      <div className="col-span-7">
+      <div className="col-span-12 md:col-span-7">
         <MoviesGrid />
       </div>
       <div className="col-span-3 hidden xl:block">

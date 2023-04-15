@@ -7,6 +7,8 @@ interface FetchResponse<T> {
 
 export const useData = <T>(endpoint: string) => {
     const [data, setData] = useState<T[]>([]);
+    const [ error , setError] = useState("");
+    
     useEffect(() => {
         apiClient
           .get<FetchResponse<T>>(endpoint)
@@ -14,9 +16,9 @@ export const useData = <T>(endpoint: string) => {
             setData(res.data.results);
           })
           .catch((err) => {
-            console.log(err);
+            setError(err)
           });
       }, []);
       
-      return { data }
+      return { data, error }
 }

@@ -5,7 +5,7 @@ interface Props {
 }
 
 const MovieCard = ({ data }: Props) => {
-  const backgroundImage = movieImage(data.poster_path);
+  const backgroundImage = movieImage(data.poster_path, "w342");
   return (
     <>
       <div
