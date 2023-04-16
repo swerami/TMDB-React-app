@@ -1,7 +1,8 @@
+import { Movies } from "../hooks/useMovies";
 import movieImage from "../services/movie-image";
 
 interface Props {
-  data: any;
+  data: Movies;
 }
 
 const MovieCard = ({ data }: Props) => {

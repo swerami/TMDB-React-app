@@ -30,7 +30,7 @@ const generalItems: { [key: string]: IconType } = {
 };
 
 const Sidebar = () => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("Home");
   return (
     <nav className="border-r h-full">
       <div className="flex flex-row items-center gap-2">

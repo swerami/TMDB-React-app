@@ -1,5 +1,4 @@
-import { useData } from './useData';
-import { Movies } from './useMovies';
+import useData from './useData';
 
 interface Person {
     id: number;
@@ -12,6 +11,6 @@ export interface Popular {
    results: Person[]
   }
 
-const usePopular = () => useData<Movies>("/movie/top_rated")
+const usePopular = () => useData<Popular>("/movie/top_rated")
 
 export default usePopular

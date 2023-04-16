@@ -1,9 +1,13 @@
-import React from "react";
+import { Genre } from "../hooks/useGenres";
 
-const Navbar = () => {
+interface Props {
+  genres: Genre[];
+}
+
+const Navbar = ({ genres }: Props) => {
   return (
     <ul>
-      <li></li>
+      {genres && genres?.map((genre) => <li key={genre.id}>{genre.name}</li>)}
     </ul>
   );
 };

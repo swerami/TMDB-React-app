@@ -1,10 +1,13 @@
 import { SwiperSlide } from "swiper/react";
-import useMovies from "../hooks/useMovies";
+import useMovies, { Movies } from "../hooks/useMovies";
 import SwiperTS from "./SwiperTS";
 import movieImage from "../services/movie-image";
 
-const MainMovie = () => {
-  const { data } = useMovies();
+interface Props {
+  data: Movies[];
+}
+
+const MainMovie = ({ data }: Props) => {
   return (
     <div className="w-full">
       <SwiperTS
