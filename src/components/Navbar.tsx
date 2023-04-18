@@ -5,9 +5,18 @@ interface Props {
 }
 
 const Navbar = ({ genres }: Props) => {
+  const modifiedGenres = genres.slice(0, 3);
   return (
-    <ul>
-      {genres && genres?.map((genre) => <li key={genre.id}>{genre.name}</li>)}
+    <ul className="flex flex-row gap-6 font-medium text-gray-400">
+      {genres &&
+        modifiedGenres?.map((genre) => (
+          <li
+            className="cursor-pointer hover:scale-105 hover:text-gray-500 transition duration-300"
+            key={genre.id}
+          >
+            {genre.name}
+          </li>
+        ))}
     </ul>
   );
 };

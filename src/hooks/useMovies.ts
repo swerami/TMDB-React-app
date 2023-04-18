@@ -6,6 +6,6 @@ export interface Movies {
     poster_path: string;
   }
 
-const useMovies = () => useData<Movies>("/discover/movie")
+const useMovies = () => useData<Movies>("/discover/movie", '')
 
 export default useMovies
