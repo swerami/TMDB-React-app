@@ -1,6 +1,8 @@
 import useData from './useData';
 
 export interface Movies {
+    id: number;  
+    name: string;
     title: string;
     release_date: string;
     poster_path: string;

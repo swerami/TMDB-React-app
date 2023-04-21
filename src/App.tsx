@@ -6,6 +6,7 @@ import useMovies from "./hooks/useMovies";
 import usePopular from "./hooks/usePopular";
 import Search from "./components/Search";
 import PlayingNow from "./components/PlayingNow";
+import RightSidebarGrid from "./components/RightSidebarGrid";
 
 const App = () => {
   // const { data: GenreData } = useGenres();
@@ -13,7 +14,7 @@ const App = () => {
   const { data: TopRateData } = usePopular();
 
   return (
-    <div className="grid grid-cols-12 gap-4 p-8">
+    <div className="grid grid-cols-12 gap-14 p-8">
       <div className="col-span-2 hidden xl:block">
         <Sidebar />
       </div>
@@ -23,7 +24,7 @@ const App = () => {
       </div>
       <div className="flex-col gap-4 md:col-span-5 xl:col-span-3 hidden md:flex">
         <Search />
-        <PlayingNow />
+        <RightSidebarGrid />
       </div>
     </div>
   );
