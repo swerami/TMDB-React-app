@@ -15,9 +15,9 @@ interface Props {
 const MoviesGrid = ({ MovieData, TopRateData }: Props) => {
   return (
     <div className="flex flex-col gap-12">
-      {/* <MainMovie data={MovieData} /> */}
-      <SwiperComp title="Top Rated" results={MovieData} />
-      <SwiperComp title="Discover more" results={TopRateData} />
+      <MainMovie data={MovieData} />
+      <SwiperComp delay={3000} title="Top Rated" results={MovieData} />
+      <SwiperComp delay={4000} title="Discover more" results={TopRateData} />
     </div>
   );
 };

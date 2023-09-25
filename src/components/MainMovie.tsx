@@ -13,7 +13,9 @@ const MainMovie = ({ data }: Props) => {
       <SwiperTS
         spaceBetween={0}
         slidesPerView={1}
-        loop={true}
+        // loop={false}
+        delay={7000}
+        autoPlay={true}
         showNavigation={false}
         classes={"rounded-3xl"}
       >

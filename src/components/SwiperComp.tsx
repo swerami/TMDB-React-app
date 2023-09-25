@@ -10,9 +10,10 @@ SwiperCore.use([Navigation, Pagination]);
 interface Props<T> {
   results: T[];
   title: string;
+  delay?: number;
 }
 
-const SwiperComp = <T,>({ results, title }: Props<T>) => {
+const SwiperComp = <T,>({ results, title, delay }: Props<T>) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -47,7 +48,8 @@ const SwiperComp = <T,>({ results, title }: Props<T>) => {
       <SwiperTS
         spaceBetween={12}
         slidesPerView={slidesPerView}
-        loop={false}
+        // loop={false}
+        delay={delay}
         showNavigation={true}
         classes={"pt-12"}
       >

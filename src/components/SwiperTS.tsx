@@ -1,6 +1,6 @@
 import { ReactNode, useRef } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 SwiperCore.use([Navigation, Pagination]);
@@ -8,7 +8,9 @@ SwiperCore.use([Navigation, Pagination]);
 interface Props {
   spaceBetween: number;
   slidesPerView: number;
-  loop: boolean;
+  // loop: boolean;
+  delay?: number;
+  autoPlay?: boolean;
   classes: string;
   showNavigation: boolean;
   children: ReactNode;
@@ -17,7 +19,9 @@ interface Props {
 const SwiperTS = ({
   spaceBetween,
   slidesPerView,
-  loop,
+  // loop,
+  delay,
+  autoPlay,
   classes,
   showNavigation,
   children,
@@ -27,14 +31,19 @@ const SwiperTS = ({
     <Swiper
       spaceBetween={spaceBetween}
       slidesPerView={slidesPerView}
-      loop={loop}
+      // loop={loop}
+      autoplay={{
+        delay: delay,
+        disableOnInteraction: false,
+      }}
+      modules={[Autoplay]}
       className={`swiper-container ${classes}`}
       onSwiper={(swiper) => {
         swiperRef.current = swiper;
       }}
     >
       {showNavigation && (
-        <div className="absolute top-0 right-0 flex flex-row gap-4">
+        <div className="absolute top-0 right-0 flex flex-row gap-1">
           <button
             onClick={() => swiperRef.current?.slidePrev()}
             className="p-3 rounded-full border border-gray-300"
