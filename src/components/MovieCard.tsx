@@ -10,7 +10,7 @@ const MovieCard = ({ data }: Props) => {
   return (
     <>
       <div
-        className="grid grid-rows-2 gap-4 h-64 rounded-2xl" // relative
+        className="flex flex-col gap-4 h-64 rounded-2xl" // relative
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
