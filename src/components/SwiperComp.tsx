@@ -44,7 +44,7 @@ const SwiperComp = <T,>({ results, title, delay }: Props<T>) => {
       break;
   }
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-96">
       <SwiperTS
         spaceBetween={12}
         slidesPerView={slidesPerView}
@@ -55,7 +55,7 @@ const SwiperComp = <T,>({ results, title, delay }: Props<T>) => {
       >
         <p className="absolute top-2 left-0 font-semibold text-lg">{title}</p>
         {results.map((result: any, index) => (
-          <SwiperSlide key={index} className="">
+          <SwiperSlide key={index} className="pt-16">
             <MovieCard data={result} />
           </SwiperSlide>
         ))}

@@ -37,7 +37,7 @@ const SwiperTS = ({
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className={`swiper-container ${classes}`}
+      className={`swiper-container w-full h-full ${classes}`}
       onSwiper={(swiper) => {
         swiperRef.current = swiper;
       }}
