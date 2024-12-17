@@ -21,8 +21,10 @@ const Layout = () => {
         <Outlet />
       </div>
       <div className="flex-col gap-4 md:col-span-5 xl:col-span-3 hidden md:flex">
-        <Search />
-        <RightSidebarGrid />
+        <div className="sticky left-0 top-0 pt-2">
+          <Search />
+          <RightSidebarGrid />
+        </div>
       </div>
     </div>
   );

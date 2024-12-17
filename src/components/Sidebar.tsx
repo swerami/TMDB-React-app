@@ -32,7 +32,7 @@ const generalItems: { [key: string]: IconType } = {
 const Sidebar = () => {
   const [active, setActive] = useState("Home");
   return (
-    <nav className="border-r h-full">
+    <nav className="border-r h-fit sticky left-0 top-0 pt-2">
       <div className="flex flex-row items-center gap-2">
         <img
           className="w-12 text-red-500"
