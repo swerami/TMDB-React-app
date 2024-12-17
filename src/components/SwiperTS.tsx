@@ -31,7 +31,7 @@ const SwiperTS = ({
     <Swiper
       spaceBetween={spaceBetween}
       slidesPerView={slidesPerView}
-      // loop={loop}
+      loop={autoPlay}
       autoplay={{
         delay: delay,
         disableOnInteraction: false,
@@ -43,18 +43,18 @@ const SwiperTS = ({
       }}
     >
       {showNavigation && (
-        <div className="absolute top-0 right-0 flex flex-row gap-1">
+        <div className="absolute top-0 right-0 flex flex-row gap-1 z-50">
           <button
             onClick={() => swiperRef.current?.slidePrev()}
-            className="p-3 rounded-full border border-gray-300"
+            className="p-3 rounded-full border border-gray-300 cursor-pointer"
           >
-            <AiOutlineLeft className="w-4" />
+            <AiOutlineLeft className="w-4 pointer-events-none" />
           </button>
           <button
             onClick={() => swiperRef.current?.slideNext()}
-            className="p-3 rounded-full border border-gray-300"
+            className="p-3 rounded-full border border-gray-300 cursor-pointer"
           >
-            <AiOutlineRight className="w-4" />
+            <AiOutlineRight className="w-4 pointer-events-none" />
           </button>
         </div>
       )}

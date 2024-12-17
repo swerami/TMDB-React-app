@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-import { API_KEY } from "../../config";
+import { API_KEY } from "../../config.js";
 import { MovieResponse } from "../entities/MovieResponse";
 
 export const axiosInstance = axios.create({

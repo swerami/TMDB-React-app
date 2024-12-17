@@ -49,13 +49,14 @@ const SwiperComp = <T,>({ results, title, delay }: Props<T>) => {
         spaceBetween={12}
         slidesPerView={slidesPerView}
         // loop={false}
+        autoPlay
         delay={delay}
         showNavigation={true}
         classes={"pt-12"}
       >
         <p className="absolute top-2 left-0 font-semibold text-lg">{title}</p>
         {results.map((result: any, index) => (
-          <SwiperSlide key={index} className="pt-16">
+          <SwiperSlide key={index} className="mt-16">
             <MovieCard data={result} />
           </SwiperSlide>
         ))}
